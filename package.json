@@ -1,0 +1,15 @@
+{
+  "name": "sentribiz",
+  "version": "1.0.0",
+  "description": "SentriBiz stemmed from the increasing cybersecurity threats faced by small businesses, which often lack the resources and knowledge to implement effective security measures. We recognized the vulnerability of these businesses and felt a strong desire to empower them with the tools and knowledge needed to protect themselves from cyber threats.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
