@@ -24,7 +24,7 @@ const Register = () => {
     }
 
     try {
-      const response = await fetch('/api/authentication/register/', {
+      const response = await fetch('http://127.0.0.1:8000/api/authentication/register/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -77,7 +77,27 @@ const Register = () => {
   return (
     <div className="registration-page">
       <div className="registration-container">
+          {/* Left Section with Image */}
+          <div className="registration-image-section">
+            <img
+              src="/Images/loginImage.png"
+              alt="SecurityImage"
+              className="registration-image"
+            />
+          </div>
+
         <div className="registration-form-section">
+            {/* Logo */}
+            <div className="registration-logo">
+              <a href="/">
+                <img
+                  src="/Images/logo.png"
+                  alt="SentriBiz Logo"
+                  className="form-logo"
+                />
+              </a>
+            </div>
+            
           <form className="registration-form" onSubmit={handleSubmit}>
             <h2 className="form-heading">Sign Up</h2>
 
