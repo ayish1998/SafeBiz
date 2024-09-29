@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import './assets/css/App.css'; // Adjust the path as necessary
@@ -43,7 +42,6 @@ function Home() {
         </div>
       </div>
       {/* Main content ends here */}
-
       {/* Features Section Starts Here */}
       <div className="features-section container-fluid">
         <div className="row align-items-center justify-content-center">
@@ -163,7 +161,7 @@ function Home() {
           </div>
         </div>
       </div>
-      {/* Comprehensive Security Assessment Section Ends Here */} 
+      {/* Comprehensive Security Assessment Section Ends Here */}  
     </div>
   );
 }
@@ -233,7 +231,6 @@ function App() {
         <Route path="/assessment" element={<Assessment />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<App />} />  {/* Default route to home */}
       </Routes>
     </div>
   );
