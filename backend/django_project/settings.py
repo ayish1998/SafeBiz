@@ -58,6 +58,7 @@ MIDDLEWARE = [
 # CORS settings for frontend communication
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',  # Frontend URL
+    "https://sentribiz.onrender.com" # Production Frontend URL
 ]
 
 # Templates and Authentication Backend settings
