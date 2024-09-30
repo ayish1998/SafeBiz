@@ -8,6 +8,8 @@ import Register from './components/Auth/Register';  // For the register page
 import Login from './components/Auth/Login';  // For the login page
 import StartAssessment from './components/StartAssessment'; // For the user's dashboard 
 import Dashboard from './components/Dashboard/Dashboard'; // For the user's dashboard 
+import Recommendations from './components/Dashboard/Recommendations';
+import Submission from './components/Submission';
 
 // Home component for homepage
 function Home() {
@@ -235,6 +237,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/assessment/start" element={<StartAssessment />} />
+        <Route path="/dashboard/recommendations" element={<Recommendations />} />
+        <Route path="  /assessments/submission" element={<Submission />} />
       </Routes>
     </div>
   );

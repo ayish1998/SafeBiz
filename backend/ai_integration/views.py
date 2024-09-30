@@ -35,7 +35,7 @@ def analyze_with_openai(answers):
     openai.api_key = os.getenv('OPENAI_API_KEY')  # Use environment variable for API key
 
     # Prepare the prompt for OpenAI
-    prompt = f"Based on the following security practices: {answers}, provide tailored cybersecurity recommendations for a small business."
+    prompt = f"Based on the following security practices: {answers}, provide tailored cybersecurity recommendations for this small business."
 
     try:
         response = openai.ChatCompletion.create(
