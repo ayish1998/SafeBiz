@@ -22,7 +22,7 @@ function App() {
               <li><a href="/assessment">Take Assessment</a></li>
               <li><a href="/resources">Resources</a></li>
             </ul>
-            <a href="/register" className="navbar-button">Sign Up</a>
+            <a href="/login" className="navbar-button">Sign In</a>
           </div>
         </div>
       </nav>
