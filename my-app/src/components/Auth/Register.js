@@ -1,5 +1,7 @@
+// Register.js
+
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
+import { useNavigate } from 'react-router-dom';
 import '../../assets/css/register.css';
 
 const Register = () => {
@@ -11,20 +13,28 @@ const Register = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
-  const navigate = useNavigate(); // Initialize the navigate function
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     setSuccess('');
 
-    if (password !== repeatPassword) {
-      setError("Passwords don't match");
+    // Validate inputs before sending the request
+    if (!name || !email || !password || !repeatPassword) {
+      setError('All fields are required.');
       return;
     }
 
+    if (password !== repeatPassword) {
+      setError("Passwords don't match.");
+      return;
+    }
+
+    // Optionally, add more password validation here before submission
+
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/authentication/register/', {
+      const response = await fetch('http://localhost:8000/auth/register/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -51,9 +61,11 @@ const Register = () => {
           navigate('/login');
         }, 2000);
       } else {
-        setError(data.error);
+        // Handle known errors more gracefully
+        setError(data.error || 'Registration failed. Please check your input.');
       }
     } catch (err) {
+      console.error('Error during registration:', err); // Log the error for debugging
       setError('Registration failed. Please try again later.');
     }
   };
@@ -77,27 +89,27 @@ const Register = () => {
   return (
     <div className="registration-page">
       <div className="registration-container">
-          {/* Left Section with Image */}
-          <div className="registration-image-section">
-            <img
-              src="/Images/loginImage.png"
-              alt="SecurityImage"
-              className="registration-image"
-            />
-          </div>
+        {/* Left Section with Image */}
+        <div className="registration-image-section">
+          <img
+            src="/Images/loginImage.png"
+            alt="SecurityImage"
+            className="registration-image"
+          />
+        </div>
 
         <div className="registration-form-section">
-            {/* Logo */}
-            <div className="registration-logo">
-              <a href="/">
-                <img
-                  src="/Images/logo.png"
-                  alt="SentriBiz Logo"
-                  className="form-logo"
-                />
-              </a>
-            </div>
-            
+          {/* Logo */}
+          <div className="registration-logo">
+            <a href="/">
+              <img
+                src="/Images/logo.png"
+                alt="SentriBiz Logo"
+                className="form-logo"
+              />
+            </a>
+          </div>
+          
           <form className="registration-form" onSubmit={handleSubmit}>
             <h2 className="form-heading">Sign Up</h2>
 

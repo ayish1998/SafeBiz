@@ -1,33 +1,18 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import './assets/css/App.css'; // Adjust the path as necessary
 
-function App() {
+// Import your components
+import Assessment from './Assessment';  // For the assessment page
+import Register from './components/Auth/Register';  // For the register page
+import Login from './components/Auth/Login';  // For the login page
+import StartAssessment from './components/StartAssessment'; // For the user's dashboard 
+import Dashboard from './components/Dashboard/Dashboard'; // For the user's dashboard 
+
+// Home component for homepage
+function Home() {
   return (
     <div>
-      {/* Navbar starts here */}
-      <nav>
-        <div className="navbar navbar-light bg-white shadow">
-          <div className="navbar-logo">
-            <img src="/Images/logo.png" alt="Logo" />
-          </div>
-
-          {/* Hamburger menu icon */}
-          <div className="hamburger" id="hamburger">&#9776;</div>
-
-          {/* Menu section that includes logo, links, and button */}
-          <div className="navbar-menu" id="navbar-menu">
-            <ul className="navbar-links">
-              <li><a href="/home">Home</a></li>
-              <li><a href="/assessment">Take Assessment</a></li>
-              <li><a href="/resources">Resources</a></li>
-            </ul>
-            <a href="/login" className="navbar-button">Sign In</a>
-          </div>
-        </div>
-      </nav>
-      {/* Navbar ends here */}
-
       {/* Main content starts here */}
       <div className="container">
         <div className="row align-items-center">
@@ -59,7 +44,6 @@ function App() {
         </div>
       </div>
       {/* Main content ends here */}
-
       {/* Features Section Starts Here */}
       <div className="features-section container-fluid">
         <div className="row align-items-center justify-content-center">
@@ -167,7 +151,7 @@ function App() {
               posture effectively. Track your progress over time for continued
               improvement.
             </p>
-            <a href="/" className="assessment-button">Take Assessment</a>
+            <a href="/assessment" className="assessment-button">Take Assessment</a>
           </div>
 
           <div className="right-column">
@@ -179,33 +163,87 @@ function App() {
           </div>
         </div>
       </div>
-      {/* Comprehensive Security Assessment Section Ends Here */}
-
-      {/* Footer Section */}
-      <footer className="footer-section">
-        <div className="footer-container">
-          <div className="footer-left">
-            <img
-              src="/Images/logo.png" // Adjusted path for the image
-              alt="SentriBiz Logo"
-              className="footer-logo"
-            />
-            <p className="footer-company-name">SentriBiz</p>
-          </div>
-
-          <div className="footer-right">
-            <p className="footer-contact">
-              support@sentribiz.com &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; +230
-              123 567 345
-            </p>
-            <p className="footer-rights">
-              &copy; 2024 SentriBiz. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+      {/* Comprehensive Security Assessment Section Ends Here */}  
     </div>
   );
 }
 
-export default App;
+function App() {
+  const location = useLocation(); // Get the current path
+
+  return (
+    <div>
+      {/* Show Navbar, Footer, and Main Content only on the homepage ("/") */}
+      {location.pathname === '/' && (
+        <>
+          {/* Navbar starts here */}
+          <nav>
+            <div className="navbar navbar-light bg-white shadow">
+              <div className="navbar-logo">
+                <img src="/Images/logo.png" alt="Logo" />
+              </div>
+
+              {/* Hamburger menu icon */}
+              <div className="hamburger" id="hamburger">&#9776;</div>
+
+              {/* Menu section that includes logo, links, and button */}
+              <div className="navbar-menu" id="navbar-menu">
+                <ul className="navbar-links">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/assessment">Take Assessment</a></li>
+                  <li><a href="/resources">Resources</a></li>
+                </ul>
+                <a href="/login" className="navbar-button">Sign In</a>
+              </div>
+            </div>
+          </nav>
+          {/* Navbar ends here */}
+
+          {/* Main content, Features, Expert Solutions, etc. */}
+          <Home />
+
+          {/* Footer Section */}
+          <footer className="footer-section">
+            <div className="footer-container">
+              <div className="footer-left">
+                <img
+                  src="/Images/logo.png"
+                  alt="SentriBiz Logo"
+                  className="footer-logo"
+                />
+                <p className="footer-company-name">SentriBiz</p>
+              </div>
+
+              <div className="footer-right">
+                <p className="footer-contact">
+                  support@sentribiz.com &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; +230
+                  123 567 345
+                </p>
+                <p className="footer-rights">
+                  &copy; 2024 SentriBiz. All rights reserved.
+                </p>
+              </div>
+            </div>
+          </footer>
+        </>
+      )}
+
+      {/* Define routes */}
+      <Routes>
+        <Route path="/assessment" element={<Assessment />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/assessment/start" element={<StartAssessment />} />
+      </Routes>
+    </div>
+  );
+}
+
+export default function AppWrapper() {
+  return (
+    <Router>
+      <App />
+    </Router>
+  );
+}
