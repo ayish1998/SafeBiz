@@ -238,7 +238,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/assessment/start" element={<StartAssessment />} />
         <Route path="/dashboard/recommendations" element={<Recommendations />} />
-        <Route path="  /assessments/submission" element={<Submission />} />
+        <Route path="/assessments/submission" element={<Submission />} />
       </Routes>
     </div>
   );

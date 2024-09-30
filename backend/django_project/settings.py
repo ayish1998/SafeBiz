@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Security settings (ensure to modify for production)
 SECRET_KEY = os.getenv('SECRET_KEY')
-DEBUG = True  # Set to False in production
+DEBUG = False  # Set to False in production
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
 
 # Root URL configuration
