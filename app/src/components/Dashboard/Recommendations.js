@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../src/assets/css/assessment.css'; 
+import '../../assets/css/assessment.css'; 
 
 const Recommendations = () => {
     const navigate = useNavigate();

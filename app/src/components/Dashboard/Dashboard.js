@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import '../../assets/css/dashboard.css'; 
+import '../../assets/css/assessment.css'; 
 
 const Dashboard = () => {
     const [userData, setUserData] = useState(null);
