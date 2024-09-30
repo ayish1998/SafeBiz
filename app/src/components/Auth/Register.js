@@ -34,7 +34,7 @@ const Register = () => {
     // Optionally, add more password validation here before submission
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/auth/register/', {
+      const response = await fetch('https://sentribiz-8az3.onrender.com/auth/register/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

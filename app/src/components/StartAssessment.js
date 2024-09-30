@@ -21,7 +21,7 @@ const StartAssessment = () => {
 
     const fetchAssessmentQuestions = async () => {
         try {
-            const response = await fetch('/api/assessment/questions');
+            const response = await fetch('https://sentribiz-8az3.onrender.com/api/assessment/questions');
             if (!response.ok) throw new Error('Failed to fetch questions');
             const data = await response.json();
             setQuestions(data);
@@ -51,7 +51,7 @@ const StartAssessment = () => {
 
     const handleSubmit = async () => {
         try {
-            const response = await fetch('/api/assessment/submit', {
+            const response = await fetch('https://sentribiz-8az3.onrender.com/api/assessment/submit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

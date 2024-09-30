@@ -24,7 +24,7 @@ const Recommendations = () => {
 
     const fetchRecommendations = async (token) => {
         try {
-            const response = await fetch('http://127.0.0.1:8000/api/assessment/recommendations/', {
+            const response = await fetch('https://sentribiz-8az3.onrender.com/api/assessment/recommendations/', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`,

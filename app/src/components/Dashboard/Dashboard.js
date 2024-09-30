@@ -10,7 +10,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchUserData = async (token) => {
             try {
-                const response = await fetch('http://127.0.0.1:8000/auth/user/', {
+                const response = await fetch('https://sentribiz-8az3.onrender.com/auth/user/', {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${token}`,

@@ -37,7 +37,7 @@ import '../../assets/css/login.css';
 
         try {
             // Login request
-            const response = await fetch('http://localhost:8000/auth/login/', { 
+            const response = await fetch('https://sentribiz-8az3.onrender.com/auth/login/', { 
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ import '../../assets/css/login.css';
                 localStorage.setItem('refreshToken', refreshToken);
 
                 // Fetch the authenticated user's data with the token
-                const userResponse = await fetch('http://localhost:8000/auth/user/', {
+                const userResponse = await fetch('https://sentribiz-8az3.onrender.com/auth/user/', {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${accessToken}`,
