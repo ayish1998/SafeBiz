@@ -1,0 +1,198 @@
+[
+    {
+        "section": "Tell Us About Your Business",
+        "questions": [
+            {
+                "id": "business_name",
+                "text": "What is the name of your business?",
+                "type": "text"
+            },
+            {
+                "id": "industry",
+                "text": "Which industry does your business operate in?",
+                "type": "single-choice",
+                "options": [
+                    "Retail",
+                    "Healthcare",
+                    "Financial Services",
+                    "Manufacturing",
+                    "Technology",
+                    "Other"
+                ]
+            },
+            {
+                "id": "employees",
+                "text": "How many employees does your business have?",
+                "type": "single-choice",
+                "options": [
+                    "Less than 10",
+                    "10-50",
+                    "50-200",
+                    "More than 200"
+                ]
+            },
+            {
+                "id": "location",
+                "text": "What’s your primary business location?",
+                "type": "text"
+            }
+        ]
+    },
+    {
+        "section": "Your Cybersecurity Practices",
+        "questions": [
+            {
+                "id": "dedicated_IT_team",
+                "text": "Do you currently have a dedicated IT or security team?",
+                "type": "single-choice",
+                "options": [
+                    "Yes",
+                    "No",
+                    "We outsource IT services"
+                ]
+            },
+            {
+                "id": "security_review_frequency",
+                "text": "How often do you review or update your security practices?",
+                "type": "single-choice",
+                "options": [
+                    "Monthly",
+                    "Quarterly",
+                    "Annually",
+                    "Rarely or never"
+                ]
+            },
+            {
+                "id": "cybersecurity_measures",
+                "text": "Which of the following cybersecurity measures do you currently have in place?",
+                "type": "multiple-choice",
+                "options": [
+                    "Antivirus/Anti-malware software",
+                    "Firewalls",
+                    "Data encryption",
+                    "Multi-factor authentication (MFA)",
+                    "Regular backups",
+                    "Employee cybersecurity training",
+                    "Incident response plan",
+                    "None of the above"
+                ]
+            },
+            {
+                "id": "vulnerability_assessments",
+                "text": "Do you conduct regular vulnerability assessments or penetration testing on your systems?",
+                "type": "single-choice",
+                "options": [
+                    "Yes",
+                    "No",
+                    "I’m not sure"
+                ]
+            }
+        ]
+    },
+    {
+        "section": "Protecting Your Data",
+        "questions": [
+            {
+                "id": "data_storage",
+                "text": "How do you store sensitive customer data?",
+                "type": "multiple-choice",
+                "options": [
+                    "Cloud storage (encrypted)",
+                    "Local server (encrypted)",
+                    "Cloud storage (not encrypted)",
+                    "Local server (not encrypted)",
+                    "Physical paper records",
+                    "I don’t store sensitive data"
+                ]
+            },
+            {
+                "id": "password_management",
+                "text": "Do you have policies in place for securely managing passwords (e.g., password managers, regular updates)?",
+                "type": "single-choice",
+                "options": [
+                    "Yes",
+                    "No",
+                    "I’m not sure"
+                ]
+            },
+            {
+                "id": "network_security",
+                "text": "What type of network security is used in your business?",
+                "type": "text"
+            }
+        ]
+    },
+    {
+        "section": "Handling Cyber Threats",
+        "questions": [
+            {
+                "id": "phishing_confidence",
+                "text": "How confident are you in identifying phishing emails or other types of social engineering attacks?",
+                "type": "single-choice",
+                "options": [
+                    "Very confident",
+                    "Somewhat confident",
+                    "Not confident",
+                    "I need training"
+                ]
+            },
+            {
+                "id": "data_breach_experience",
+                "text": "Have you experienced any data breaches or security incidents in the last 12 months?",
+                "type": "single-choice",
+                "options": [
+                    "Yes",
+                    "No",
+                    "Not sure"
+                ]
+            },
+            {
+                "id": "response_time",
+                "text": "If a cyber incident occurred, how quickly could your business respond to minimize damage?",
+                "type": "single-choice",
+                "options": [
+                    "Immediately (within 24 hours)",
+                    "Within a few days",
+                    "Not sure"
+                ]
+            }
+        ]
+    },
+    {
+        "section": "What Matters Most to You?",
+        "questions": [
+            {
+                "id": "main_concerns",
+                "text": "What are your main concerns regarding cybersecurity?",
+                "type": "text"
+            },
+            {
+                "id": "improvement_area",
+                "text": "What area of cybersecurity would you like to improve the most?",
+                "type": "single-choice",
+                "options": [
+                    "Data protection",
+                    "Employee training",
+                    "Network security",
+                    "Incident response",
+                    "Overall awareness"
+                ]
+            },
+            {
+                "id": "third_party_services",
+                "text": "Do you currently use third-party security services (e.g., managed security services)?",
+                "type": "single-choice",
+                "options": [
+                    "Yes",
+                    "No",
+                    "Considering it"
+                ]
+            },
+            {
+                "id": "additional_comments",
+                "text": "Please provide any additional comments or concerns you have regarding your business's cybersecurity practices:",
+                "type": "text"
+            }
+        ]
+    }
+]
