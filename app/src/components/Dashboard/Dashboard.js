@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import '../../assets/css/assessment.css'; 
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Dashboard = () => {
     const [userData, setUserData] = useState(null);
@@ -22,7 +23,6 @@ const Dashboard = () => {
                     const data = await response.json();
                     setUserData(data);
                 } else {
-                    // If token is invalid, redirect to login
                     navigate('/login');
                 }
             } catch (error) {
@@ -31,23 +31,19 @@ const Dashboard = () => {
             }
         };
 
-        // Check if user data exists in state, else fetch from local storage or redirect to login
         if (location.state && location.state.user) {
             setUserData(location.state.user);
         } else {
-            // Try to fetch user data with access token from local storage
             const accessToken = localStorage.getItem('accessToken');
             if (accessToken) {
                 fetchUserData(accessToken);
             } else {
-                // If no token found, redirect to login
                 navigate('/login');
             }
         }
-    }, [location.state, navigate]); // dependencies
+    }, [location.state, navigate]);
 
     const handleLogout = () => {
-        // Clear tokens and user data
         localStorage.removeItem('accessToken');
         localStorage.removeItem('refreshToken');
         setUserData(null);
@@ -55,22 +51,35 @@ const Dashboard = () => {
     };
 
     return (
-        <div className="dashboard-container">
-            <div className="dashboard-header">
-                <h1>Welcome to the Dashboard</h1>
-                <button onClick={handleLogout} className="logout-btn">Logout</button>
+        <div className="d-flex">
+            {/* Sidebar */}
+            <div className="bg-light border-end" id="sidebar-wrapper">
+                <div className="sidebar-heading">Dashboard</div>
+                <div className="list-group list-group-flush">
+                    <Link to="/" className="list-group-item list-group-item-action bg-light">Home</Link>
+                    <Link to="/assessment/recommendations" className="list-group-item list-group-item-action bg-light">Recommendations</Link>
+                    <Link to="/settings" className="list-group-item list-group-item-action bg-light">Settings</Link>
+                    <Link to="/reports" className="list-group-item list-group-item-action bg-light">Reports</Link>
+                    <Link to="/help" className="list-group-item list-group-item-action bg-light">Help</Link>
+                    <button onClick={handleLogout} className="list-group-item list-group-item-action bg-light">Logout</button>
+                </div>
             </div>
 
-            {userData ? (
-                <div className="user-info">
-                    <h2>User Information</h2>
-                    <p><strong>Email:</strong> {userData.email}</p>
-                    <p><strong>Username:</strong> {userData.username}</p>
-                    {/* Add more user fields as needed */}
-                </div>
-            ) : (
-                <p>Loading user data...</p>
-            )}
+            {/* Page content */}
+            <div className="container-fluid p-4">
+                <h1 className="mt-4">Welcome to the Dashboard</h1>
+
+                {userData ? (
+                    <div className="user-info">
+                        <h2>User Information</h2>
+                        <p><strong>Email:</strong> {userData.email}</p>
+                        <p><strong>Username:</strong> {userData.username}</p>
+                        {/* Add more user fields as needed */}
+                    </div>
+                ) : (
+                    <p>Loading user data...</p>
+                )}
+            </div>
         </div>
     );
 };

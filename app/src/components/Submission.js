@@ -1,3 +1,5 @@
+// Submission.js
+
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -7,7 +9,7 @@ const Submission = () => {
     const navigate = useNavigate();
     const [progress, setProgress] = useState(0);
     const [isAnalysisComplete, setIsAnalysisComplete] = useState(false);
-    
+
     useEffect(() => {
         const accessToken = localStorage.getItem('accessToken');
         if (!accessToken) {
@@ -18,6 +20,7 @@ const Submission = () => {
                 }
             });
         } else {
+            // Start AI analysis after navigating to the submission page
             startAnalysis();
         }
     }, [navigate]);
@@ -36,61 +39,34 @@ const Submission = () => {
         }, 1000);
     };
 
+    // Function to handle sign out
+    const signOut = () => {
+        localStorage.removeItem('accessToken');
+        navigate('/login'); // Redirect to login page after signing out
+    };
+
+    // Redirect to recommendations after analysis is complete
     useEffect(() => {
-        // Once analysis is complete, redirect to recommendations page
         if (isAnalysisComplete) {
-            setTimeout(() => {
-                navigate('/dashboard/recommendations');
-            }, 1500); // Wait a bit before redirecting
+            navigate('/assessments/recommendations');
         }
     }, [isAnalysisComplete, navigate]);
 
     return (
-        <div className="submission-container">
-            {/* Navbar */}
-            <nav className="navbar navbar-expand-lg navbar-light bg-white shadow">
-                <div className="container">
-                    <div className="navbar-logo">
-                        <img src="/Images/logo.png" alt="Logo" />
-                    </div>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarMenu">
-                        <ul className="navbar-nav mr-auto">
-                            <li className="nav-item">
-                                <a className="nav-link" href="/">Home</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="/assessment">Take Assessment</a>
-                            </li>
-                        </ul>
-                        <a href="/login" className="btn btn-primary">Sign In</a>
-                    </div>
+        <div className="submission-page">
+            <nav className="navbar">
+                <div className="navbar-logo">
+                    <img src="/Images/logo.png" alt="Logo" />
                 </div>
+                <button className="signout-button" onClick={signOut}>Sign Out</button>
             </nav>
-
-            {/* Main content */}
-            <div className="container text-center mt-5">
-                <h1>Thank You for Your Submission!</h1>
-                <p className="lead">Your responses have been submitted successfully. Our AI is now analyzing your data to generate personalized security recommendations tailored to your business needs.</p>
-
-                {/* Progress bar */}
-                <div className="progress mt-5" style={{ height: '30px' }}>
-                    <div
-                        className="progress-bar progress-bar-striped progress-bar-animated"
-                        role="progressbar"
-                        style={{ width: `${progress}%` }}
-                        aria-valuenow={progress}
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                    >
-                        {progress}%
-                    </div>
+            <div className="container">
+                <h2>Thank You for Your Submission!</h2>
+                <p>Your responses are being analyzed. Please wait a moment...</p>
+                <div className="progress-bar" style={{ width: `${progress}%` }}>
+                    {progress}%
                 </div>
-
-                {/* Conditional message when analysis is complete */}
-                {isAnalysisComplete && <p className="text-success mt-3">Analysis complete! Redirecting...</p>}
+                {isAnalysisComplete && <p>Analysis complete! Redirecting to your recommendations...</p>}
             </div>
         </div>
     );

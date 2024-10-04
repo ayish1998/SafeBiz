@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../../assets/css/assessment.css'; 
+// import '../../assets/css/assessment.css'; 
 
 const Recommendations = () => {
     const navigate = useNavigate();
@@ -11,8 +11,8 @@ const Recommendations = () => {
     useEffect(() => {
         const accessToken = localStorage.getItem('accessToken');
         if (!accessToken) {
-            navigate('/login', { 
-                state: { 
+            navigate('/login', {
+                state: {
                     message: 'Please log in to view your recommendations.',
                     redirectTo: '/dashboard/recommendations'  // Redirect after login
                 }
@@ -24,7 +24,7 @@ const Recommendations = () => {
 
     const fetchRecommendations = async (token) => {
         try {
-            const response = await fetch('https://sentribiz-8az3.onrender.com/api/assessment/recommendations/', {
+            const response = await fetch('http://127.0.0.1:8000/api/assessment/recommendations/', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`,
