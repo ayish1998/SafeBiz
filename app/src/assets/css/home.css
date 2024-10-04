@@ -1,0 +1,334 @@
+/* Container styling */
+.container {
+    padding: 80px 0;
+    margin: 0 auto;
+  }
+  
+#main-col{
+    padding: 0;
+}
+  
+  /* Main heading */
+  .main-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    width: 70%;
+    margin-bottom: 20px;
+  }
+  
+  /* Main paragraph */
+  .main-paragraph {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    width: 90%;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  
+  /* Input group for email and button */
+  .input-group {
+    display: flex;
+    gap: 10px;
+    max-width: 400px;
+  }
+  
+  /* Button styling */
+  .main-button {
+    padding: 8px 20px;
+    border: 1px solid #159915;
+    border-radius: 25px;
+    background-color: #fff;
+    font-weight: 600;
+    color: black;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .main-button:hover {
+    background-color: #286428;
+    color: #fff;
+  }
+  
+  .main-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(23, 237, 22, 0.4);
+  }
+  
+  /* Image styling */
+  .home-image {
+    width: 100%;
+    max-width: fit-content;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Features Section */
+  .features-section {
+    padding: 30px 80px;
+    background-color: #17ed16;
+  }
+
+/* First Feature Heading */
+.first-feature-heading {
+    font-size: 1.3rem !important;
+    font-weight: 600 !important;
+    width: 100% !important;
+  }
+  
+  /* Feature Heading (for all headings) */
+  .feature-heading {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0;
+  }
+  
+  /* Feature Icon Container */
+  .feature-icon-container {
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff6c;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+  
+  /* Feature Icon */
+  .feature-icon {
+    width: 20px;
+    height: auto;
+  }
+  
+  /* Feature Box */
+  .feature-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+  }
+  
+  /* Expert Solutions Section */
+  .expert-solutions-section .container{
+    padding: 40px 0 0 0;
+  }
+
+  .expert-solutions-section {
+    padding: 80px 0;
+    text-align: center;
+  }
+  
+  /* Section Title */
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    margin-top: 30px;
+  }
+  
+  /* Solution Box */
+  .solution-box {
+    margin-bottom: 30px;
+  }
+  
+  /* Solution Image */
+  .solution-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Solution Heading */
+  .solution-heading {
+    font-size: 1rem;
+    margin-top: 15px;
+    text-align: start;
+    width: 70%;
+  }
+  
+  /* Solution Description */
+  .solution-description {
+    font-size: 0.8rem;
+    color: #555;
+    text-align: start;
+    width: 70%;
+  }
+
+  #main-comprehensive{
+    padding-left: 12%;
+    width: 70%;
+  }
+
+  .main-text{
+    text-align: center;
+  }
+  
+  /* Assessment Section */
+  .assessment-section {
+    padding: 50px 40px;
+    margin-bottom: 10%;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  /* Assessment Title that spans across all columns */
+  .assessment-title {
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+    text-align: center;
+    font-weight: 600;
+    padding: 0 35%;
+    width: 100%;
+  }
+  
+  /* Assessment Container */
+  .assessment-container {
+    display: flex;
+    align-items: stretch;
+    /* position: relative; */
+    justify-content: space-between;
+    gap: 2%;
+  }
+  
+  /* Left Column */
+  .left-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    height: 100%;
+  }
+  
+  /* Small Image */
+  .small-assessment-image {
+    flex-grow: 1;
+    max-height: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    height: 150px;
+    padding-bottom: 5%;
+  }
+  
+  /* Large Image */
+  .large-assessment-image {
+    flex-grow: 1;
+    max-height: 50%;
+    object-fit: cover;
+    height: 250px;
+  }
+  
+  /* Middle Column */
+  .middle-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    height: 100%;
+    padding-top: 40px;
+    padding-left: 5%;
+  }
+
+  .main-recommendation{
+    text-align: left;
+  }
+  
+  /* Recommendation Title */
+  .recommendation-title {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  
+  /* Recommendation Text */
+  .recommendation-text {
+    font-size: 1rem;
+    color: #555;
+    line-height: 2;
+    padding-left: 5px;
+    margin-bottom: 20px;
+    max-width: 80%;
+  }
+  
+  /* Assessment Button */
+  .assessment-button {
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #17ed16;
+    border-radius: 25px;
+    text-decoration: none;
+    position: relative;
+    text-align: center;
+    top: 10px;
+    width: 85%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .assessment-button:hover {
+    background-color: #159915;
+  }
+  
+  /* Right Column */
+  .right-column {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  
+  /* Right Image */
+  .right-assessment-image {
+    width: 80%;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  
+  /* Centering image for smaller screens */
+  @media (max-width: 768px) {
+    .home-image {
+      margin-top: 20px;
+    }
+  
+    .main-heading {
+      font-size: 1.5rem;
+    }
+  
+    .main-paragraph {
+      font-size: 1rem;
+      text-align: center;
+    }
+  
+    .input-group {
+      flex-direction: column;
+    }
+  
+    .main-button {
+      width: 100%;
+    }
+  
+    .email-input {
+      width: 100%;
+    }
+  }
+  /* For Responsive Behavior of the feature section*/
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column;
+    }
+  
+    .feature-box {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .feature-heading {
+      margin-top: 20px;
+    }
+  }
+  

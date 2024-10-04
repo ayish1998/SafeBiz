@@ -1,3 +1,4 @@
+# ai_integration/urls.py
 from django.urls import path
 from .views import submit_assessment, get_assessment_questions
 

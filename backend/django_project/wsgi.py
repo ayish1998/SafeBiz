@@ -1,3 +1,5 @@
+# django_project/wsgi.py
+
 import os
 import sys
 
