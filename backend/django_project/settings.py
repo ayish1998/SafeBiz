@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework_simplejwt.token_blacklist',  # For JWT handling
     'django.contrib.sites',  # Required for django-allauth
+    'channels',
 
     # Authentication and Registration apps
     'allauth',
@@ -62,6 +63,7 @@ MIDDLEWARE = [
 # CORS settings for frontend communication
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',  # Frontend URL
+    'https://sturdy-space-journey-qvvpgxxj6phx444-3000.app.github.dev'
 ]
 
 # Templates and Authentication Backend settings

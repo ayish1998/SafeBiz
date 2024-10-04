@@ -165,7 +165,7 @@ function Home() {
           </div>
         </div>
       </div>
-      {/* Comprehensive Security Assessment Section Ends Here */}  
+      {/* Comprehensive Security Assessment Section Ends Here */}
     </div>
   );
 }
@@ -232,6 +232,7 @@ function App() {
 
       {/* Define routes */}
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/assessment" element={<Assessment />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
@@ -240,6 +241,7 @@ function App() {
         <Route path="/dashboard/recommendations" element={<Recommendations />} />
         <Route path="/assessments/submission" element={<Submission />} />
       </Routes>
+
     </div>
   );
 }
