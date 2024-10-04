@@ -30,6 +30,7 @@ INSTALLED_APPS = [
 
     # Third-party apps
     'rest_framework',
+    'rest_framework.authtoken',
     'corsheaders',
     'rest_framework_simplejwt.token_blacklist',  # For JWT handling
     'django.contrib.sites',  # Required for django-allauth
@@ -38,7 +39,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',  # Optional, if you're using social auth
-    'rest_auth',
+    'dj_rest_auth',
 
     # Custom apps
     'authentication',  # Custom app for registration
