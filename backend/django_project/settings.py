@@ -10,8 +10,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Security settings (ensure to modify for production)
 SECRET_KEY = os.getenv('SECRET_KEY')
-DEBUG = False  # Set to False in production
+DEBUG = True  # Set to False in production
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Root URL configuration
 ROOT_URLCONF = 'django_project.urls'  # <-- Add it here
@@ -28,6 +30,7 @@ INSTALLED_APPS = [
 
     # Third-party apps
     'rest_framework',
+    'rest_framework.authtoken',
     'corsheaders',
     'rest_framework_simplejwt.token_blacklist',  # For JWT handling
     'django.contrib.sites',  # Required for django-allauth
@@ -36,10 +39,11 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',  # Optional, if you're using social auth
-    'rest_auth',
+    'dj_rest_auth',
 
     # Custom apps
-    'authentication',  # Your custom app for registration
+    'authentication',  # Custom app for registration
+    'ai_integration',  # Custom app for AI integration
 ]
 
 # Middleware
@@ -58,7 +62,6 @@ MIDDLEWARE = [
 # CORS settings for frontend communication
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',  # Frontend URL
-    "https://sentribiz.onrender.com" # Production Frontend URL
 ]
 
 # Templates and Authentication Backend settings
